@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DesignPatterns\Prototype\Example1PrototypeController;
+use App\Http\Controllers\DesignPatterns\Singleton\Example1SingletonController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +23,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::group(['prefix'=>'prototype'],function(){
     Route::get('example1',[Example1PrototypeController::class,'example1']);
+});
+
+Route::group(['prefix'=>'singleton'],function(){
+    Route::get('example1',[Example1SingletonController::class,'example1']);
 });
 
 
