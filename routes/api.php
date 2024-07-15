@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DesignPatterns\Builder\Example1QueryBuilderController;
 use App\Http\Controllers\DesignPatterns\Prototype\Example1PrototypeController;
 use App\Http\Controllers\DesignPatterns\Singleton\Example1SingletonController;
 use Illuminate\Http\Request;
@@ -27,6 +28,10 @@ Route::group(['prefix'=>'prototype'],function(){
 
 Route::group(['prefix'=>'singleton'],function(){
     Route::get('example1',[Example1SingletonController::class,'example1']);
+});
+
+Route::group(['prefix'=>'builder'],function(){
+    Route::get('example1',[Example1QueryBuilderController::class,'example1']);
 });
 
 
